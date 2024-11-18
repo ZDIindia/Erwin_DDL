@@ -1,0 +1,28 @@
+"Physical Name"	"Comments"	"Physical Name"	"@Table Name"	"Comments"	"Empty Is Null"	"Is FK"	"Is PK"	"Null Option"	"Physical Data Type"
+Dim_Provider		Provider_ID	Dim_Provider			false	true	Not Null	int
+Dim_Provider		ProviderName	Dim_Provider			false	false	Null	varchar(255)
+Dim_Provider		NPI	Dim_Provider			false	false	Null	int
+Dim_Location		Location_ID	Dim_Location			false	true	Not Null	int
+Dim_Location		Address	Dim_Location			false	false	Null	varchar(255)
+Dim_Location		City	Dim_Location			false	false	Null	varchar(100)
+Dim_Location		State_Name	Dim_Location			false	false	Null	varchar(2)
+Dim_Location		ZIPCode	Dim_Location			false	false	Null	varchar(10)
+Dim_Date		Date_ID	Dim_Date			false	true	Not Null	int
+Dim_Date		Year_No	Dim_Date			false	false	Null	int
+Dim_Date		Quater_No	Dim_Date			false	false	Null	int
+Dim_Date		Month_No	Dim_Date			false	false	Null	int
+Dim_Date		Day_No	Dim_Date			false	false	Null	int
+Dim_Date		Hour_No	Dim_Date			false	false	Null	int
+Dim_Diagnosis		Diagnosis_ID	Dim_Diagnosis			false	true	Not Null	int
+Dim_Diagnosis		ICD10Code	Dim_Diagnosis			false	false	Null	varchar(10)
+Dim_Diagnosis		Description	Dim_Diagnosis			false	false	Null	varchar(255)
+Fact_Claim		Claim_ID	Fact_Claim			false	true	Not Null	int
+Fact_Claim		Diagnosis_ID	Fact_Claim			true	true	Not Null	int
+Fact_Claim		Location_ID	Fact_Claim			true	true	Not Null	int
+Fact_Claim		Provider_ID	Fact_Claim			true	true	Not Null	int
+Fact_Claim		Date_ID	Fact_Claim			true	true	Not Null	int
+Fact_Claim		Procedure_ID	Fact_Claim			false	false	Null	int
+Fact_Claim		TotalPayments	Fact_Claim			false	false	Null	decimal(10,2)
+Fact_Claim		Beneficiaries	Fact_Claim			false	false	Null	int
+Fact_Claim		AveragePayment	Fact_Claim			false	false	Null	decimal(10,2)
+Fact_Claim		Del_Indr	Fact_Claim			false	false	Null	VARCHAR(20)
